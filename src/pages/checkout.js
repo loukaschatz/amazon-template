@@ -9,7 +9,7 @@ import { useSession } from "next-auth/client"
 const Checkout = () => {
     const items = useSelector(selectItems)
     const total = useSelector(selectTotal)
-    const session = useSession()
+    const [session] = useSession()
 
     return (
         <div className="bg-gray-100">
@@ -41,7 +41,6 @@ const Checkout = () => {
                     </div>
                 </div>
 
-                {/* Right */}
                 <div className="flex flex-col bg-white p-10 shadow-md">
                     {items.length > 0 && (
                         <>
